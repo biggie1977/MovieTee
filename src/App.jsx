@@ -1,7 +1,7 @@
 import "./css/App.css";
 import Favorites from "./pages/Favorites";
 import Home from "./pages/Home";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { MovieProvider } from "./contexts/MovieContext";
 import NavBar from "./components/NavBar";
 
@@ -13,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/favorites" element={<Favorites />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
     </MovieProvider>
